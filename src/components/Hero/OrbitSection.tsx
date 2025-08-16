@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useOrbitAnimation } from "../../hooks/useOrbitAnimation";
 import "./styles.css";
 
 const orbitItems = ["Education", "Experience", "Projects", "Skills", "Contact"];
 
-const OrbitSection: React.FC = () => {
+const OrbitSection = () => {
   const orbitContainerRef = useRef<HTMLDivElement>(null);
   const orbitingStyles = useOrbitAnimation(orbitContainerRef, orbitItems.length);
 

@@ -1,0 +1,90 @@
+.skills-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-alt);
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: 3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.skills-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-tabs,
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tab-button,
+.skill-chip {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--color-secondary);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 0 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background-color: var(--color-secondary-hover);
+  transform: scale(1.05);
+}
+
+.skill-chip {
+  background-color: var(--color-primary);
+}
+
+.skill-chip:hover {
+  background-color: var(--color-secondary-hover);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .skills-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .skills-tabs,
+  .skills-grid {
+    flex-direction: column; 
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .tab-button,
+  .skill-chip {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    width: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: normal;
+  }
+}
