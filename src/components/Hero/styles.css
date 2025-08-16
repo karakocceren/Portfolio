@@ -1,0 +1,147 @@
+.bubbled-background {
+  position: relative;
+  min-height: 100vh;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: rise linear infinite;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+@keyframes rise {
+  0% {
+    bottom: 0;
+    transform: scale(1) translateX(-50%);
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 100%;
+    transform: scale(0.8) translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1400px;
+  position: relative;
+  z-index: 1;
+}
+
+.text-section {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.text-section h1 {
+  font-size: clamp(3rem, 5vw, 4rem);
+  margin-bottom: 0.5rem;
+}
+
+.text-section p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.orbit-container {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: clamp(300px, 40vw, 800px);
+  height: auto;
+  min-width: 250px;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-primary);
+  color: white;
+  border-radius: 25%;
+  text-align: center;
+  width: 20%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.orbit-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  aspect-ratio: 1 / 1;
+  background: var(--color-secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.orbit-item:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--color-secondary-hover);
+}
+
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 5vh;
+    gap: 15vw;
+  }
+
+  .text-section {
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .orbit-container {
+    width: clamp(250px, 70vw, 450px);
+  }
+
+  .orbit-center {
+    width: 25%;
+  }
+
+  .orbit-item {
+    width: 25%;
+  }
+}
